@@ -46,20 +46,20 @@ solve;
 #--------------------------------------------------------------------
 
 # Prints data and solution
-printf "-----------data----------- \n" > "result.txt";
+printf "-----------data----------- \n" > "result2.txt";
 
-printf{i in 1..U}: "cost(%d): %d\tA:%.2f  B:%.2f  C:%.3f\n", i, cost[i], A[i], B[i], C[i] >> "result.txt"; 
+printf{i in 1..U}: "cost(%d): %d\tA:%.2f  B:%.2f  C:%.3f\n", i, cost[i], A[i], B[i], C[i] >> "result2.txt"; 
 
-printf "\n" >> "result.txt";
+printf "\n" >> "result2.txt";
 
-printf{i in 1..U}: "prod(%d): %g <= %d <= %g \n", i, Pmin[i], prod[i], Pmax[i] >> "result.txt";
+printf{i in 1..U}: "prod(%d): %g <= %d <= %g \n", i, Pmin[i], prod[i], Pmax[i] >> "result2.txt";
 
-printf "\n-----------solution----------\n\n" >> "result.txt";
+printf "\n-----------solution----------\n\n" >> "result2.txt";
 
-printf "Units: %d   Grids: %d\n", U, N >> "result.txt";
+printf "Units: %d   Grids: %d\n", U, N >> "result2.txt";
 
-printf: "total cost: %.2f\n", sum{i in 1..U} cost[i] >> "result.txt";
-printf: "produced: %.2f\ndemand: %.2f\n\n", sum{i in 1..U} prod[i]*x[i], demand >> "result.txt";
-printf{i in 1..U}: (if x[i] == 1 then "unit %d: On\n" else ""), i >> "result.txt";
+printf: "total cost: %.2f\n", sum{i in 1..U} cost[i] >> "result2.txt";
+printf: "produced: %.2f\ndemand: %.2f\n\n", sum{i in 1..U} prod[i]*x[i], demand >> "result2.txt";
+printf{i in 1..U}: (if x[i] == 1 then "unit %d: On\n" else ""), i >> "result2.txt";
 
 end;
