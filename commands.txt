@@ -1,0 +1,3 @@
+glpsol -m uc_quadratic.mod -d ../_data/input/dat/10_100.dat -o results/test.sol
+
+jupyter-lab
